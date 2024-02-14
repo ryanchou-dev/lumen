@@ -10,18 +10,18 @@ export default function Sources() {
         <Navbar />
         <div className="justify-center flex  flex-col items-center">
           <div className="flex text-center flex-col">
-            <div className="xl:mt-24 mt-8 lg:text-7xl text-6xl w-full lg:mb-0">
+            <div className="xl:mt-24 mt-8 lg:text-7xl text-4xl md:text-6xl w-full lg:mb-0">
               <div className="max-w-2xl text-white mb-6  font-semibold z-50 font-['Jost']">
                 Libraries/Tools Used.
               </div>
             </div>
 
-            <div className="xl:mt-16 mt-8 lg:text-5xl text-4xl w-full lg:mb-0">
+            <div className="xl:mt-16 mt-8 lg:text-5xl text-2xl md:text-4xl w-full lg:mb-0">
               <div className="max-w-2xl text-[#ABFF3A] mb-6  font-semibold z-50 font-['Jost']">
                 Web
               </div>
             </div>
-            <ul className="list-disc max-w-2xl text-white text-2xl space-y-3">
+            <ul className="list-disc max-w-2xl text-white text-xl md:text-2xl space-y-3">
               <li>
                 <a
                   href="https://nextjs.org/"
@@ -96,12 +96,12 @@ export default function Sources() {
               </li>
             </ul>
 
-            <div className="xl:mt-16 mt-8 lg:text-5xl text-4xl w-full lg:mb-0">
+            <div className="xl:mt-16 mt-8 lg:text-5xl md:text-4xl text-2xl w-full lg:mb-0">
               <div className="max-w-2xl text-[#ABFF3A] mb-6  font-semibold z-50 font-['Jost']">
                 Storage
               </div>
             </div>
-            <ul className="list-disc max-w-2xl text-white text-2xl space-y-3">
+            <ul className="list-disc max-w-2xl text-white text-xl md:text-2xl space-y-3">
               <li>
                 <a
                   href="https://www.postgresql.org/"
@@ -133,7 +133,7 @@ export default function Sources() {
               </li>
             </ul>
 
-            <div className="xl:mt-16 mt-8 lg:text-5xl text-4xl w-full lg:mb-0">
+            <div className="xl:mt-16 mt-8 lg:text-5xl md:text-4xl text-2xl w-full lg:mb-0">
               <div className="max-w-2xl text-[#ABFF3A] mb-6  font-semibold z-50 font-['Jost']">
                 Programming Languages/Tools
               </div>
@@ -158,12 +158,12 @@ export default function Sources() {
               </li>
             </ul>
           </div>
-          <div className="xl:mt-16 text-center mt-8 lg:text-5xl text-4xl w-full lg:mb-0">
+          <div className="xl:mt-16 text-center mt-8 lg:text-5xl md:text-4xl text-2xl w-full lg:mb-0">
             <div className="max-w-2xl text-[#ABFF3A] mb-6  font-semibold z-50 font-['Jost']">
               Media
             </div>
           </div>
-          <ul className="list-disc max-w-2xl text-white text-2xl space-y-3">
+          <ul className="list-disc max-w-2xl text-white text-xl md:text-2xl space-y-3">
             <li>
               <a
                 href="https://unsplash.com/"

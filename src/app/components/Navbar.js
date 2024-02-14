@@ -8,7 +8,7 @@ export default function Navbar() {
 
   if (status == "loading") {
     return (
-      <div className="z-10 max-w-7xl w-full items-center justify-between   lg:flex ">
+      <div className="z-10 max-w-7xl w-full items-center justify-between   flex flex-shrink ">
         <div className="rounded-3xl w-80 h-80 filter blur-3xl -left-12  opacity-10 mix-blend-multiply absolute -top-48 bg-white"></div>
 
         <div className="text-white items-center flex justify-center">
@@ -20,8 +20,8 @@ export default function Navbar() {
             <Image alt="Lumen Logo" src={lumen} width={150} />
           </Link>
         </div>
-        <div className="text-center flex  items-center justify-center lg:text-right lg:mt-0 mt-6 text-sm">
-          <div className="text-white space-x-8 flex flex-row ">
+        <div className="text-center flex  items-center justify-center lg:text-right lg:mt-0 mt-6 md:md:text-sm text-xs text-xs">
+          <div className="text-white space-x-2 md:space-x-8 flex flex-row ">
             <Link
               href="/careers"
               passHref
@@ -62,8 +62,8 @@ export default function Navbar() {
           <Image alt="Lumen Logo" src={lumen} width={150} />
         </Link>
       </div>
-      <div className="text-center flex  items-center justify-center lg:text-right lg:mt-0 mt-6 text-sm">
-        <div className="text-white space-x-8 flex flex-row ">
+      <div className="text-center flex  items-center justify-center lg:text-right lg:mt-0 mt-6 md:text-sm text-xs">
+        <div className="text-white space-x-2 md:space-x-8 flex flex-row ">
           <Link
             href="/careers"
             passHref
