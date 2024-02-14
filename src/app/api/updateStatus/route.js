@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "../../db/authOptions";
 // import database instance
 import { db } from "../../db/db";
 import { NextResponse } from "next/server";
