@@ -46,6 +46,7 @@ model User {
     accounts      Account[]
     sessions      Session[]
     applications  JobApplication[]
+    admin         Boolean          @default(false)
 }
 
 model VerificationToken {
@@ -58,18 +59,19 @@ model VerificationToken {
 
 model JobApplication {
     // general attributes
-    id          String  @id @default(cuid())
-    jobTitle    String
-    firstName   String
-    lastName    String
-    phoneNumber String
-    resumeLink  String
-    address     String
-    linkedin    String?
-    github      String?
-    twitter     String?
-    portfolio   String?
-    read        Boolean @default(false)
+    id           String  @id @default(cuid())
+    jobTitle     String
+    firstName    String
+    lastName     String
+    phoneNumber  String
+    contactEmail String
+    resumeLink   String
+    address      String
+    linkedin     String?
+    github       String?
+    twitter      String?
+    portfolio    String?
+    status       String  @default("In Progress")
 
     // relations
     applicant   User   @relation(fields: [applicantId], references: [id])

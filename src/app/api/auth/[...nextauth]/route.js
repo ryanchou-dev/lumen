@@ -1,12 +1,10 @@
 import NextAuth from "next-auth";
 import Email from "next-auth/providers/email";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { db } from "../../../db/db";
 
 export const authOptions = {
-  adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(db),
   providers: [
     Email({
       server: {
@@ -20,6 +18,15 @@ export const authOptions = {
       from: process.env.NEXT_PUBLIC_EMAIL_FROM,
     }),
   ],
+
+  callbacks: {
+    // attach user id and admin status to session
+    session: async ({ session, user }) => {
+      session.user.id = user.id;
+      session.user.admin = user.admin;
+      return session;
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);

@@ -1,12 +1,20 @@
 import Image from "next/image";
 import lumen from "../../../public/lumen.svg";
 import Link from "next/link";
+// check if user is signed in
+import { useSession } from "next-auth/react";
+
 export default function Footer() {
+  const { data: session, status } = useSession();
   return (
     <div className="bg-[#131313] w-full flex py-16 px-4 ">
       <div className="w-full">
         <div className="float-left">
           <Image src={lumen} width={150} />
+
+          <div className="font-['Jost'] mt-4 text-white">
+            Copyright 2024 ©️ LUMEN Design
+          </div>
         </div>
 
         <div className="text-white text-sm text-right space-x-12 float-right  ">
@@ -18,19 +26,19 @@ export default function Footer() {
             <p>CAREERS </p>
           </Link>
           <Link
-            href="/"
+            href="/sources"
             passHref
-            className="font-['Rubik']  text-white  font-bold opacity-70 transition-opacity hover:opacity-100 duration-200"
+            className="font-['Rubik'] text-white font-bold opacity-70 transition-opacity hover:opacity-100 duration-200"
           >
-            <p>WORKS </p>
+            <p>SOURCES</p>
           </Link>
           <br />
           <Link
-            href="/"
+            href={status == "unauthenticated" ? "/sign-in" : "/account"}
             passHref
-            className="font-['Rubik'] mt-12 w-fit text-xs font-bold rounded-xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300 px-8 bg-black/50 border-2 border-gray-600/50  py-2"
+            className="font-['Rubik'] text-white font-bold opacity-70 transition-opacity hover:opacity-100 duration-200"
           >
-            <span>CONTACT </span>
+            {status == "unauthenticated" ? "SIGN IN" : "ACCOUNT"}
           </Link>
         </div>
       </div>

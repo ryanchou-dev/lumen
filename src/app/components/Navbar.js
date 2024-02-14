@@ -72,25 +72,42 @@ export default function Navbar() {
             CAREERS
           </Link>
           <Link
-            href="/"
+            href={status == "unauthenticated" ? "/sign-in" : "/account"}
             passHref
-            className="font-['Rubik'] text-white font-bold opacity-70 transition-opacity hover:opacity-100 duration-200"
-          >
-            WORKS
-          </Link>
-          <Link
-            href={status == "unauthenticated" ? "/api/auth/signin" : "/account"}
-            passHref
-            className="font-['Rubik']  -mt-2 w-fit text-xs font-bold rounded-xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300 px-8 bg-black/50 border-2 border-gray-600/50  py-2"
+            className="flex items-center justify-center font-['Rubik']  -mt-2 w-fit text-xs font-bold rounded-xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300 px-8 bg-black/50 border-2 border-gray-600/50  py-2"
           >
             {status == "unauthenticated" ? "SIGN IN" : "ACCOUNT"}
           </Link>
+          {/* if the user is an administrator, link the admin dashboard */}
+          {status == "authenticated" && session.user.admin && (
+            <Link
+              href={"/admin"}
+              passHref
+              className="flex items-center justify-center font-['Rubik']  -mt-2 w-fit text-xs font-bold rounded-xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300 px-8 bg-black/50 border-2 border-gray-600/50  py-2"
+            >
+              ADMIN
+            </Link>
+          )}
+          {/* if the user is authenticated, show the sign out button */}
           {status == "authenticated" && (
             <button
               onClick={() => signOut()}
-              className="font-['Rubik']  -mt-2 w-fit text-xs font-bold rounded-xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300 px-8 bg-black/50 border-2 border-gray-600/50  py-2"
+              className="font-['Rubik']  -mt-2 w-fit text-xs font-bold rounded-xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300 px-3 bg-black/50 border-2 border-gray-600/50  py-2"
             >
-              SIGN OUT
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+                />
+              </svg>
             </button>
           )}
         </div>

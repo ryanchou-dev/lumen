@@ -7,6 +7,7 @@ export default function ScrollFade({ children, delay, className }) {
   const isInview = useInView(ref, { once: true });
   const controls = useAnimation();
 
+  // if the element is in view, start the animation
   useEffect(() => {
     if (isInview) {
       controls.start("visible");

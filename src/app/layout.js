@@ -17,6 +17,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   const session = await getServerSession(authOptions);
   return (
+    // pass down session context to pages
     <SessionProvider session={session}>
       <html lang="en">
         <body className={inter.className}>{children}</body>

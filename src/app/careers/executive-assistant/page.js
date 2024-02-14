@@ -1,15 +1,12 @@
 "use client";
 import React from "react";
-import Link from "next/link";
-
-// animation & authentication
+// animation
 import { motion } from "framer-motion";
+// redirects & authentication
+import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
-// redirect
-import { useRouter } from "next/navigation";
-
-// for form fields
+// useState for form fields
 import { useState } from "react";
 
 import Navbar from "@/../../src/app/components/Navbar";
@@ -19,7 +16,7 @@ const AnimatedText = ({ text }) => {
   // splitting text into letters
   const words = text.split(" ");
 
-  // variants for container
+  // Variants for Container
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
@@ -27,8 +24,7 @@ const AnimatedText = ({ text }) => {
       transition: { staggerChildren: 0.04, delayChildren: 0.04 * i },
     }),
   };
-
-  // variants for each word
+  // Variants for each letter
   const child = {
     visible: {
       opacity: 1,
@@ -73,7 +69,7 @@ const AnimatedText = ({ text }) => {
   );
 };
 
-export default function ProductDesigner() {
+export default function ExecutiveAssistant() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -99,7 +95,7 @@ export default function ProductDesigner() {
       cache: "no-cache",
       method: "POST",
       body: JSON.stringify({
-        jobTitle: "Product Designer",
+        jobTitle: "Executive Assistant",
         firstName,
         lastName,
         phoneNumber,
@@ -138,10 +134,10 @@ export default function ProductDesigner() {
         <div>
           <div className="flex text-center flex-col">
             <div className="xl:mt-24 mt-8 lg:text-7xl text-6xl w-full lg:mb-0">
-              <div className="max-w-2xl text-white mb-6  font-semibold z-50 font-['Jost']">
-                <AnimatedText text="Product Designer" />
+              <div className="max-w-xl text-white mb-6  font-semibold z-50 font-['Jost']">
+                <AnimatedText text="Executive Assistant" />
                 <div className="text-xl text-gray-300 lg:text-2xl font-medium mt-4 mb-8">
-                  Full Time • Sales
+                  Full Time • Administration
                 </div>
                 <div className="text-gray-400 text-xl lg:text-2xl font-medium">
                   <svg
@@ -180,12 +176,13 @@ export default function ProductDesigner() {
                       d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"
                     />
                   </svg>
-                  $150,000 - $220,000
+                  $125,000 - $175,000
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <div className="h-0.5 bg-gray-500 w-full my-4" />
         <div className="px-4 lg:px-12 xl:px-16 w-full">
           <div className="grid-cols-1 gap-4 divide-slate-500 xl:divide-none divide-y-2 xl:grid-cols-2 grid w-full">
@@ -194,14 +191,17 @@ export default function ProductDesigner() {
                 Description
               </div>
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
-                We are seeking a talented and motivated Product Engineer to join
-                our team. As a Product Engineer at LUMEN, you will play a key
-                role in the development and execution of cutting-edge design
-                projects. You will collaborate closely with designers,
-                developers, and clients to bring innovative products to life.
-                The ideal candidate is passionate about technology, has a keen
-                eye for detail, and thrives in a fast-paced, collaborative
-                environment.
+                As an Executive Assistant at LUMEN, you will play a pivotal role
+                in supporting our executive team and ensuring the efficient
+                operation of our organization. You'll be responsible for
+                managing calendars, coordinating meetings, arranging travel, and
+                handling various administrative tasks. Your attention to detail,
+                organizational skills, and ability to prioritize tasks will be
+                crucial in maintaining smooth workflow and supporting the
+                productivity of our executives. Additionally, you'll serve as a
+                liaison between the executive team and internal/external
+                stakeholders, requiring strong communication and interpersonal
+                skills.
               </div>
             </div>
 
@@ -212,40 +212,37 @@ export default function ProductDesigner() {
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
                 <ul className="list-disc space-y-2">
                   <li>
-                    Collaborate with cross-functional teams to understand
-                    project requirements, user needs, and design objectives.
+                    Manage the CFO's calendar, schedule appointments, and
+                    coordinate meetings, conferences, and travel arrangements.
                   </li>
                   <li>
-                    Develop innovative and user-centric product designs,
-                    considering factors such as usability, aesthetics, and
-                    functionality.
+                    Prepare and organize documents, reports, presentations, and
+                    correspondence for the CFO.
                   </li>
                   <li>
-                    Create sketches, wireframes, prototypes, and mock-ups to
-                    communicate design concepts and iterate on ideas.
+                    Serve as the primary point of contact for internal and
+                    external stakeholders, including clients, vendors, and
+                    investors.
                   </li>
                   <li>
-                    Use design tools such as Adobe Creative Suite, Sketch, or
-                    Figma to create detailed design specifications and assets.
+                    Coordinate and facilitate communication between the CFO and
+                    other departments within the organization.
                   </li>
                   <li>
-                    Conduct user research, usability testing, and feedback
-                    sessions to gather insights and validate design decisions.
+                    Assist with financial administration tasks, such as expense
+                    tracking, budget management, and invoice processing.
                   </li>
                   <li>
-                    Work closely with engineers, developers, and other
-                    stakeholders to ensure seamless integration of design
-                    solutions into the final product.
+                    Conduct research and gather information to support the CFO
+                    in decision-making and strategic planning.
                   </li>
                   <li>
-                    Stay updated on industry trends, emerging technologies, and
-                    best practices in product design to drive innovation and
-                    maintain a competitive edge.
+                    Handle sensitive and confidential information with
+                    discretion and professionalism.
                   </li>
                   <li>
-                    Provide design guidance and support to junior designers or
-                    interns, fostering a collaborative and creative work
-                    environment.
+                    Perform ad hoc administrative tasks and special projects as
+                    assigned by the CFO.
                   </li>
                 </ul>
               </div>
@@ -258,29 +255,25 @@ export default function ProductDesigner() {
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
                 <ul className="list-disc space-y-2">
                   <li>
-                    Bachelor's degree in Industrial Design, Product Design,
-                    Graphic Design, or related field. A master's degree or
-                    relevant certifications is a plus.
+                    Bachelor's degree in Business Administration, Finance, or
+                    related field preferred.
                   </li>
                   <li>
-                    Proven experience (typically 3-5 years) in product design
-                    roles, preferably in a design agency or creative studio
-                    environment.
+                    Proven experience as an executive assistant or similar role,
+                    supporting C-level executives.
                   </li>
                   <li>
-                    Proficiency in design software such as Adobe Creative Suite
-                    (Photoshop, Illustrator, InDesign), Sketch, Figma, or other
-                    relevant tools.
+                    Excellent communication and interpersonal skills, with the
+                    ability to interact with individuals at all levels.
                   </li>
                   <li>
-                    Strong portfolio showcasing a range of product design
-                    projects, including concept development, user
-                    interface/experience design, and prototyping.
+                    Detail-oriented with a high level of accuracy in work
+                    output.
                   </li>
                   <li>
-                    Excellent communication and collaboration skills, with the
-                    ability to work effectively in cross-functional teams and
-                    articulate design concepts and rationale to stakeholders.
+                    Flexibility and adaptability to changing priorities and
+                    deadlines. the CFO and other departments within the
+                    organization.
                   </li>
                 </ul>
               </div>
@@ -307,6 +300,7 @@ export default function ProductDesigner() {
             </div>
           </div>
         </div>
+
         {/* only show if the user is signed in */}
         {status == "authenticated" ? (
           <div>
@@ -529,6 +523,7 @@ export default function ProductDesigner() {
           </div>
         )}
       </div>
+
       <Footer />
     </>
   );

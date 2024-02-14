@@ -1,25 +1,28 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import lumen from "../../../public/lumen.svg";
+
+// redirects & authentication
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import Loading from "../components/Loading";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-import Loading from "../components/Loading";
-
-// authentication and redirecting
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
-
-export default function Account() {
+export default function Admin() {
   const [applications, setApplications] = useState({});
+  const [filter, setFilter] = useState("In Progress");
   const { data: session, status } = useSession();
 
   const router = useRouter();
 
+  // fetch all applications
   useEffect(() => {
-    // pull all of the user's job applications
     async function fetchData() {
-      const res = await fetch("/api/history", {
+      const res = await fetch("/api/fetchAll", {
         method: "GET",
       });
 
@@ -34,13 +37,20 @@ export default function Account() {
     });
   }, []);
 
-  // if user is not authenticated, redirect to the home page
+  // once we get the user's authentication status, we redirect them if they're not an admin
   useEffect(() => {
-    if (status == "unauthenticated") {
-      router.refresh();
+    if (
+      status == "unauthenticated" ||
+      (status == "authenticated" && !session.user.admin)
+    ) {
       router.push("/");
     }
   }, [status]);
+
+  // if we're still fetching the user's authentication status, we show a loading screen
+  if (status != "authenticated" || !session.user.admin) {
+    return <Loading />;
+  }
 
   // reused component for each application
   const ApplicationCard = ({ application }) => {
@@ -141,6 +151,41 @@ export default function Account() {
           </div>
         )}
 
+        <div className="h-0.5 bg-white mb-8" />
+        <div className="text-xl mx-auto text-white font-semibold lg:text-2xl  max-w-3xl mb-8">
+          Change Application Status:
+          <select
+            onChange={(e) => {
+              fetch("/api/updateStatus", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  id: application.id,
+                  status: e.target.value,
+                }),
+              });
+              const idx = applications.findIndex(
+                (app) => app.id === application.id
+              );
+              const newApplications = [...applications];
+              newApplications[idx].status = e.target.value;
+              setApplications(newApplications);
+            }}
+            className="inline px-4 py-2 rounded-lg bg-[#1A1A1A] font-['Jost'] text-xl lg:text-2xl font-semibold text-white"
+          >
+            <option value="Choose Status" selected disabled hidden>
+              Choose Status
+            </option>
+            <option value="In Progress">In Progress</option>
+            <option value="Under Consideration">Under Consideration</option>
+            <option value="Interviewing">Interviewing</option>
+            <option value="Interviewed">Interviewed</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Accepted">Accepted</option>
+          </select>
+        </div>
         <div className="text-xl mx-auto text-gray-500 lg:text-2xl font-medium max-w-3xl mb-8">
           Applied on:{" "}
           {new Date(Date.parse(application.createdAt))
@@ -149,15 +194,13 @@ export default function Account() {
               month: "2-digit",
               day: "2-digit",
             })
+            // reformat date with regex
             .replace(/(\d+)\/(\d+)\/(\d+)/, "$1-$2-$3")}
         </div>
       </div>
     );
   };
 
-  if (status != "authenticated") {
-    return <Loading />;
-  }
   return (
     <>
       <div className="px-8 lg:px-16 xl:px-32 flex  min-h-screen flex-col items-center p-6 bg-[#1A1A1A]">
@@ -165,26 +208,74 @@ export default function Account() {
         <div className="">
           <div className="xl:mt-24 mt-8 text-center lg:text-6xl text-5xl w-full lg:mb-0">
             <div className="max-w-xl text-white mb-6  font-semibold z-50 font-['Jost']">
-              Welcome back!
+              Admin Dashboard
               <div className="text-xl text-gray-300 lg:text-2xl font-medium mt-4 mb-8">
                 Signed in as {session.user.email}.
               </div>
             </div>
           </div>
         </div>
+        <div className="h-0.5 w-full mt-12  bg-gray-500" />
         {applications.length > 0 && (
           <>
-            <div className="text-xl mx-auto text-gray-300 lg:text-2xl font-medium max-w-3xl mt-4 mb-8">
-              Open Applications:
+            <div className="space-x-4 mt-6">
+              <div className="inline text-4xl mx-auto text-white font-['Jost'] lg:text-5xl font-semibold mt-6 max-w-3xl  mb-8">
+                Applications
+              </div>
+              <select
+                onChange={(e) => setFilter(e.target.value)}
+                className="inline px-4 py-2 rounded-lg bg-[#1A1A1A] font-['Jost'] text-3xl lg:text-4xl font-semibold text-white"
+              >
+                <option value="In Progress" selected>
+                  In Progress
+                </option>
+                <option value="Under Consideration">Under Consideration</option>
+                <option value="Interviewing">Interviewing</option>
+                <option value="Interviewed">Interviewed</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Accepted">Accepted</option>
+              </select>
             </div>
-
-            <div className="w-full flex gap-4 flex-wrap mt-12">
-              {applications.map((application) => (
-                <ApplicationCard application={application} />
-              ))}
+            <div className="w-full flex flex-wrap mt-12 gap-4">
+              {applications.map(
+                (application) =>
+                  application.status == filter && (
+                    <ApplicationCard application={application} />
+                  )
+              )}
             </div>
           </>
         )}
+      </div>
+
+      <div className=" px-8 lg:px-16 xl:px-32 font-semibold text-center xl:mt-24 mt-8 lg:text-6xl text-5xl w-full lg:mb-0">
+        <Image src={lumen} width={175} className="inline" /> Benefits
+        <div className="text-xl mx-auto text-gray-300 lg:text-2xl font-medium max-w-3xl mt-4 mb-8">
+          Work happily & freely with us.
+        </div>
+      </div>
+
+      <div className="xl:mt-24 mt-8 text-left lg:text-6xl text-5xl w-full lg:mb-0">
+        <div className="max-w-xl mx-auto text-center   text-white mb-6  font-semibold z-50 font-['Jost']">
+          Open Positions
+        </div>
+
+        <>
+          <Link
+            href="/careers/product-designer"
+            passHref
+            className="font-['Rubik'] -ml-2 relative z-10  w-fit text-base lg:text-lg font-bold rounded-3xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300 px-8 lg:px-12 bg-black/50 border-2 border-gray-600/50 py-4 lg:py-6"
+          >
+            Product Designer
+          </Link>
+          <Link
+            href="/"
+            passHref
+            className="font-['Rubik'] -ml-2 relative z-10  w-fit text-base lg:text-lg font-bold rounded-3xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300 px-8 lg:px-12 bg-black/50 border-2 border-gray-600/50 py-4 lg:py-6"
+          >
+            Sales Engineer
+          </Link>
+        </>
       </div>
 
       <Footer />

@@ -2,21 +2,19 @@
 import React from "react";
 import Link from "next/link";
 
-// animation & authentication
+// animation & redirects
 import { motion } from "framer-motion";
-import { useSession } from "next-auth/react";
-
-// redirect
 import { useRouter } from "next/navigation";
 
-// for form fields
+// authentication & form handling
+import { useSession } from "next-auth/react";
 import { useState } from "react";
 
 import Navbar from "@/../../src/app/components/Navbar";
 import Footer from "@/../../src/app/components/Footer";
 
 const AnimatedText = ({ text }) => {
-  // splitting text into letters
+  // splitting text into words
   const words = text.split(" ");
 
   // variants for container
@@ -27,7 +25,6 @@ const AnimatedText = ({ text }) => {
       transition: { staggerChildren: 0.04, delayChildren: 0.04 * i },
     }),
   };
-
   // variants for each word
   const child = {
     visible: {
@@ -73,7 +70,7 @@ const AnimatedText = ({ text }) => {
   );
 };
 
-export default function ProductDesigner() {
+export default function CustomerMarketing() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -99,7 +96,7 @@ export default function ProductDesigner() {
       cache: "no-cache",
       method: "POST",
       body: JSON.stringify({
-        jobTitle: "Product Designer",
+        jobTitle: "Customer Marketing Manger",
         firstName,
         lastName,
         phoneNumber,
@@ -139,9 +136,9 @@ export default function ProductDesigner() {
           <div className="flex text-center flex-col">
             <div className="xl:mt-24 mt-8 lg:text-7xl text-6xl w-full lg:mb-0">
               <div className="max-w-2xl text-white mb-6  font-semibold z-50 font-['Jost']">
-                <AnimatedText text="Product Designer" />
+                <AnimatedText text="Customer Marketing Manager" />
                 <div className="text-xl text-gray-300 lg:text-2xl font-medium mt-4 mb-8">
-                  Full Time • Sales
+                  Full Time • Marketing
                 </div>
                 <div className="text-gray-400 text-xl lg:text-2xl font-medium">
                   <svg
@@ -180,12 +177,13 @@ export default function ProductDesigner() {
                       d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"
                     />
                   </svg>
-                  $150,000 - $220,000
+                  $113,000 - $147,000
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <div className="h-0.5 bg-gray-500 w-full my-4" />
         <div className="px-4 lg:px-12 xl:px-16 w-full">
           <div className="grid-cols-1 gap-4 divide-slate-500 xl:divide-none divide-y-2 xl:grid-cols-2 grid w-full">
@@ -194,14 +192,13 @@ export default function ProductDesigner() {
                 Description
               </div>
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
-                We are seeking a talented and motivated Product Engineer to join
-                our team. As a Product Engineer at LUMEN, you will play a key
-                role in the development and execution of cutting-edge design
-                projects. You will collaborate closely with designers,
-                developers, and clients to bring innovative products to life.
-                The ideal candidate is passionate about technology, has a keen
-                eye for detail, and thrives in a fast-paced, collaborative
-                environment.
+                Join LUMEN as our Customer Marketing Manager. You'll spearhead
+                customer engagement initiatives, crafting innovative strategies
+                to foster brand loyalty. Collaborate closely with
+                cross-functional teams to create unforgettable experiences for
+                our brands. If you're passionate about building meaningful
+                connections and driving business growth through customer-centric
+                marketing, this role is for you!
               </div>
             </div>
 
@@ -212,40 +209,41 @@ export default function ProductDesigner() {
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
                 <ul className="list-disc space-y-2">
                   <li>
-                    Collaborate with cross-functional teams to understand
-                    project requirements, user needs, and design objectives.
+                    Develop and execute comprehensive marketing strategies to
+                    promote LUMEN's services and enhance brand awareness.
                   </li>
                   <li>
-                    Develop innovative and user-centric product designs,
-                    considering factors such as usability, aesthetics, and
-                    functionality.
+                    Manage and oversee all marketing campaigns, including
+                    digital advertising, social media, email marketing, and
+                    content creation.
                   </li>
                   <li>
-                    Create sketches, wireframes, prototypes, and mock-ups to
-                    communicate design concepts and iterate on ideas.
+                    Conduct market research and analysis to identify trends,
+                    customer preferences, and opportunities for growth.
                   </li>
                   <li>
-                    Use design tools such as Adobe Creative Suite, Sketch, or
-                    Figma to create detailed design specifications and assets.
+                    Collaborate with cross-functional teams to develop creative
+                    assets, such as graphics, videos, and copywriting, that
+                    effectively communicate LUMEN's brand message.
                   </li>
                   <li>
-                    Conduct user research, usability testing, and feedback
-                    sessions to gather insights and validate design decisions.
+                    Plan and coordinate promotional events, trade shows, and
+                    industry conferences to showcase LUMEN's capabilities and
+                    generate leads.
                   </li>
                   <li>
-                    Work closely with engineers, developers, and other
-                    stakeholders to ensure seamless integration of design
-                    solutions into the final product.
+                    Monitor and analyze marketing performance metrics, such as
+                    website traffic, conversion rates, and campaign ROI, to
+                    optimize strategies and drive results.
                   </li>
                   <li>
-                    Stay updated on industry trends, emerging technologies, and
-                    best practices in product design to drive innovation and
-                    maintain a competitive edge.
+                    Manage the marketing budget, ensuring efficient allocation
+                    of resources and adherence to financial goals.
                   </li>
                   <li>
-                    Provide design guidance and support to junior designers or
-                    interns, fostering a collaborative and creative work
-                    environment.
+                    Cultivate and maintain relationships with media outlets,
+                    influencers, and industry partners to maximize LUMEN's
+                    visibility and reach.
                   </li>
                 </ul>
               </div>
@@ -258,29 +256,30 @@ export default function ProductDesigner() {
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
                 <ul className="list-disc space-y-2">
                   <li>
-                    Bachelor's degree in Industrial Design, Product Design,
-                    Graphic Design, or related field. A master's degree or
-                    relevant certifications is a plus.
+                    Bachelor's degree in Marketing, Business Administration, or
+                    a related field. A master's degree or relevant
+                    certifications (e.g., AMA, HubSpot) is a plus.
                   </li>
                   <li>
-                    Proven experience (typically 3-5 years) in product design
-                    roles, preferably in a design agency or creative studio
+                    Proven experience (typically 5+ years) in marketing roles,
+                    preferably in a creative agency or design-focused
                     environment.
                   </li>
                   <li>
-                    Proficiency in design software such as Adobe Creative Suite
-                    (Photoshop, Illustrator, InDesign), Sketch, Figma, or other
-                    relevant tools.
+                    Strong analytical skills and proficiency in marketing
+                    analytics tools (e.g., Google Analytics, Adobe Analytics) to
+                    track and measure campaign performance.
                   </li>
                   <li>
-                    Strong portfolio showcasing a range of product design
-                    projects, including concept development, user
-                    interface/experience design, and prototyping.
+                    Excellent communication and interpersonal skills, with the
+                    ability to effectively collaborate with cross-functional
+                    teams and external partners.
                   </li>
                   <li>
-                    Excellent communication and collaboration skills, with the
-                    ability to work effectively in cross-functional teams and
-                    articulate design concepts and rationale to stakeholders.
+                    Demonstrated leadership abilities, including experience
+                    managing a team, overseeing multiple projects
+                    simultaneously, and driving results in a fast-paced
+                    environment.
                   </li>
                 </ul>
               </div>
@@ -307,6 +306,7 @@ export default function ProductDesigner() {
             </div>
           </div>
         </div>
+
         {/* only show if the user is signed in */}
         {status == "authenticated" ? (
           <div>
@@ -529,6 +529,7 @@ export default function ProductDesigner() {
           </div>
         )}
       </div>
+
       <Footer />
     </>
   );

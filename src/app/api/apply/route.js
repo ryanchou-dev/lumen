@@ -1,12 +1,12 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "../auth/[...nextauth]/route";
+// import database instance
 import { db } from "../../db/db";
-import { NextApiRequest, NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 
+// CREATE a new job application
 export async function POST(req) {
   if (req.method === "POST") {
-    console.log("RECEIVED!");
     const {
       jobTitle,
       firstName,
@@ -18,28 +18,19 @@ export async function POST(req) {
       github,
       twitter,
       portfolio,
-      userEmail,
+      contactEmail,
     } = await req.json();
-    console.log(
-      firstName,
-      lastName,
-      phoneNumber,
-      resumeLink,
-      address,
-      linkedin,
-      github,
-      twitter,
-      portfolio,
-      userEmail,
-      jobTitle
-    );
+
+    // authentication protecting api route
     const session = await getServerSession(authOptions);
+
+    // not enough information
     if (
       !firstName ||
       !lastName ||
       !phoneNumber ||
       !resumeLink ||
-      !userEmail ||
+      !contactEmail ||
       !jobTitle
     ) {
       return new Response(null, {
@@ -62,6 +53,7 @@ export async function POST(req) {
         },
       });
 
+      // if application exists for this job under this user
       if (exists) {
         return new Response(null, {
           status: 409,
@@ -75,19 +67,12 @@ export async function POST(req) {
           statusText: "User not found",
         });
       } else {
-        console.log({
-          firstName: firstName,
-          lastName: lastName,
-          phoneNumber: phoneNumber,
-          resumeLink: resumeLink,
-          userEmail: userEmail,
-          jobTitle: jobTitle,
-        });
         const post = await db.jobApplication.create({
           data: {
             firstName: firstName,
             lastName: lastName,
             phoneNumber: phoneNumber,
+            contactEmail: contactEmail,
             resumeLink: resumeLink,
             jobTitle: jobTitle,
             linkedin: linkedin,
@@ -106,7 +91,6 @@ export async function POST(req) {
           });
         }
 
-        console.log("POSTED!");
         return NextResponse.json(post);
       }
     } else {
