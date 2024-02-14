@@ -61,28 +61,28 @@ export default function Admin() {
       >
         <div className="text-2xl mx-auto font-semibold text-gray-300 lg:text-3xl max-w-3xl mt-4 mb-2">
           {application.firstName} {application.lastName}{" "}
-          <span className="text-gray-600 text-xl lg:text-2xl">
+          <span className="text-gray-599 md:text-xl text-lg lg:text-1xl">
             ({application.status})
           </span>
         </div>
-        <div className="text-xl mx-auto text-gray-500 lg:text-2xl font-medium max-w-3xl mb-8">
+        <div className="md:text-xl text-lg mx-auto text-gray-500 lg:text-2xl font-medium max-w-3xl mb-8">
           Applying for {application.jobTitle}.
         </div>
 
-        <div className="text-xl mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
+        <div className="md:text-xl text-lg mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
           Contact Email:{" "}
           <span className="text-white font-medium">
             {application.contactEmail}
           </span>
         </div>
 
-        <div className="text-xl mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
+        <div className="md:text-xl text-lg mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
           Phone Number:{" "}
           <span className="text-white font-medium ">
             {application.phoneNumber}
           </span>
         </div>
-        <div className="text-xl mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
+        <div className="md:text-xl text-lg mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
           Resume:{" "}
           <a
             href={application.resumeLink}
@@ -93,13 +93,13 @@ export default function Admin() {
             {application.resumeLink}
           </a>
         </div>
-        <div className="text-xl mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
+        <div className="md:text-xl text-lg mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
           Address:{" "}
           <span className="text-white font-medium ">{application.address}</span>
         </div>
         <div className="h-0.5 bg-white mb-8" />
         {application.linkedin && (
-          <div className="text-xl mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
+          <div className="md:text-xl text-lg mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
             Linkedin:{" "}
             <a
               href={"https://linkedin.com/in/" + application.linkedin}
@@ -112,7 +112,7 @@ export default function Admin() {
           </div>
         )}
         {application.github && (
-          <div className="text-xl mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
+          <div className="md:text-xl text-lg mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
             Github:{" "}
             <a
               href={"https://github.com/" + application.github}
@@ -125,7 +125,7 @@ export default function Admin() {
           </div>
         )}
         {application.twitter && (
-          <div className="text-xl mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
+          <div className="md:text-xl text-lg mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
             Twitter (X.com):{" "}
             <a
               href={"https://twitter.com/" + application.twitter}
@@ -138,7 +138,7 @@ export default function Admin() {
           </div>
         )}
         {application.portfolio && (
-          <div className="text-xl mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
+          <div className="md:text-xl text-lg mx-auto text-[#ABFF3A] font-semibold lg:text-2xl  max-w-3xl mb-8">
             Portfolio:{" "}
             <a
               href={application.portfolio}
@@ -152,7 +152,7 @@ export default function Admin() {
         )}
 
         <div className="h-0.5 bg-white mb-8" />
-        <div className="text-xl mx-auto text-white font-semibold lg:text-2xl  max-w-3xl mb-8">
+        <div className="md:text-xl text-lg mx-auto text-white font-semibold lg:text-2xl  max-w-3xl mb-8">
           Change Application Status:
           <select
             onChange={(e) => {
@@ -173,7 +173,7 @@ export default function Admin() {
               newApplications[idx].status = e.target.value;
               setApplications(newApplications);
             }}
-            className="inline px-4 py-2 rounded-lg bg-[#1A1A1A] font-['Jost'] text-xl lg:text-2xl font-semibold text-white"
+            className="inline px-4 py-2 rounded-lg bg-[#1A1A1A] font-['Jost'] md:text-xl text-lg lg:text-2xl font-semibold text-white"
           >
             <option value="Choose Status" selected disabled hidden>
               Choose Status
@@ -186,7 +186,7 @@ export default function Admin() {
             <option value="Accepted">Accepted</option>
           </select>
         </div>
-        <div className="text-xl mx-auto text-gray-500 lg:text-2xl font-medium max-w-3xl mb-8">
+        <div className="md:text-xl text-lg mx-auto text-gray-500 lg:text-2xl font-medium max-w-3xl mb-8">
           Applied on:{" "}
           {new Date(Date.parse(application.createdAt))
             .toLocaleString("en-us", {
@@ -219,12 +219,12 @@ export default function Admin() {
         {applications.length > 0 && (
           <>
             <div className="space-x-4 mt-6">
-              <div className="inline text-4xl mx-auto text-white font-['Jost'] lg:text-5xl font-semibold mt-6 max-w-3xl  mb-8">
+              <div className="inline text-xl md:text-2xl mx-auto text-white font-['Jost'] lg:text-5xl font-semibold mt-6 max-w-3xl  mb-8">
                 Applications
               </div>
               <select
                 onChange={(e) => setFilter(e.target.value)}
-                className="inline px-4 py-2 rounded-lg bg-[#1A1A1A] font-['Jost'] text-3xl lg:text-4xl font-semibold text-white"
+                className="inline px-4 py-2 rounded-lg bg-[#1A1A1A] font-['Jost'] text-lg md:text-3xl lg:text-4xl font-semibold text-white"
               >
                 <option value="In Progress" selected>
                   In Progress
@@ -248,37 +248,6 @@ export default function Admin() {
             </div>
           </>
         )}
-      </div>
-
-      <div className=" px-8 lg:px-16 xl:px-32 font-semibold text-center xl:mt-24 mt-8 lg:text-6xl text-5xl w-full lg:mb-0">
-        <Image alt="Lumen Logo" src={lumen} width={175} className="inline" />{" "}
-        Benefits
-        <div className="text-xl mx-auto text-gray-300 lg:text-2xl font-medium max-w-3xl mt-4 mb-8">
-          Work happily & freely with us.
-        </div>
-      </div>
-
-      <div className="xl:mt-24 mt-8 text-left lg:text-6xl text-5xl w-full lg:mb-0">
-        <div className="max-w-xl mx-auto text-center   text-white mb-6  font-semibold z-50 font-['Jost']">
-          Open Positions
-        </div>
-
-        <>
-          <Link
-            href="/careers/product-designer"
-            passHref
-            className="font-['Rubik'] -ml-2 relative z-10  w-fit text-base lg:text-lg font-bold rounded-3xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300 px-8 lg:px-12 bg-black/50 border-2 border-gray-600/50 py-4 lg:py-6"
-          >
-            Product Designer
-          </Link>
-          <Link
-            href="/"
-            passHref
-            className="font-['Rubik'] -ml-2 relative z-10  w-fit text-base lg:text-lg font-bold rounded-3xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300 px-8 lg:px-12 bg-black/50 border-2 border-gray-600/50 py-4 lg:py-6"
-          >
-            Sales Engineer
-          </Link>
-        </>
       </div>
 
       <Footer />
