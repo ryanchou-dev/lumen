@@ -258,8 +258,8 @@ export default function ProductDesigner() {
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
                 <ul className="list-disc space-y-2">
                   <li>
-                    Bachelor's degree in Industrial Design, Product Design,
-                    Graphic Design, or related field. A master's degree or
+                    Bachelor&apos;s degree in Industrial Design, Product Design,
+                    Graphic Design, or related field. A master&apos;s degree or
                     relevant certifications is a plus.
                   </li>
                   <li>
@@ -423,8 +423,8 @@ export default function ProductDesigner() {
 
               <div className="bg-gray-500 h-0.5 w-full my-4" />
               <div className="text-gray-400  mb-4 text-center  text-xl font-medium ">
-                Optionally, let us know if there are any social links you'd like
-                to share:
+                Optionally, let us know if there are any social links you&apos;d
+                like to share:
               </div>
               <div className="grid lg:grid-cols-2  gap-8">
                 <div className="flex flex-col basis-1/2 flex-1">

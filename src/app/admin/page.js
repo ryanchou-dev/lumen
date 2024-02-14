@@ -55,11 +55,11 @@ export default function Admin() {
   // reused component for each application
   const ApplicationCard = ({ application }) => {
     return (
-      <div className="font-['Rubik'] px-6  max-w-2xl text-xs font-bold rounded-xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300  bg-black/50 border-2 border-gray-600/50  ">
-        <div
-          key={application.id}
-          className="text-2xl mx-auto font-semibold text-gray-300 lg:text-3xl max-w-3xl mt-4 mb-2"
-        >
+      <div
+        key={application.id}
+        className="font-['Rubik'] px-6  max-w-2xl text-xs font-bold rounded-xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300  bg-black/50 border-2 border-gray-600/50  "
+      >
+        <div className="text-2xl mx-auto font-semibold text-gray-300 lg:text-3xl max-w-3xl mt-4 mb-2">
           {application.firstName} {application.lastName}{" "}
           <span className="text-gray-600 text-xl lg:text-2xl">
             ({application.status})
@@ -249,7 +249,8 @@ export default function Admin() {
       </div>
 
       <div className=" px-8 lg:px-16 xl:px-32 font-semibold text-center xl:mt-24 mt-8 lg:text-6xl text-5xl w-full lg:mb-0">
-        <Image src={lumen} width={175} className="inline" /> Benefits
+        <Image alt="Lumen Logo" src={lumen} width={175} className="inline" />{" "}
+        Benefits
         <div className="text-xl mx-auto text-gray-300 lg:text-2xl font-medium max-w-3xl mt-4 mb-8">
           Work happily & freely with us.
         </div>

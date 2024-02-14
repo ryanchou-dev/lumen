@@ -10,7 +10,7 @@ export default function Footer() {
     <div className="bg-[#131313] w-full flex py-16 px-4 ">
       <div className="w-full">
         <div className="float-left">
-          <Image src={lumen} width={150} />
+          <Image alt="Lumen Logo" src={lumen} width={150} />
 
           <div className="font-['Jost'] mt-4 text-white">
             Copyright 2024 ©️ LUMEN Design

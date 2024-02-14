@@ -17,7 +17,7 @@ export default function Navbar() {
             passHref
             className="font-['Rubik'] text-white font-bold opacity-80 transition-opacity hover:opacity-100 duration-200"
           >
-            <Image src={lumen} width={150} />
+            <Image alt="Lumen Logo" src={lumen} width={150} />
           </Link>
         </div>
         <div className="text-center flex  items-center justify-center lg:text-right lg:mt-0 mt-6 text-sm">
@@ -59,7 +59,7 @@ export default function Navbar() {
           passHref
           className="font-['Rubik'] text-white font-bold opacity-80 transition-opacity hover:opacity-100 duration-200"
         >
-          <Image src={lumen} width={150} />
+          <Image alt="Lumen Logo" src={lumen} width={150} />
         </Link>
       </div>
       <div className="text-center flex  items-center justify-center lg:text-right lg:mt-0 mt-6 text-sm">

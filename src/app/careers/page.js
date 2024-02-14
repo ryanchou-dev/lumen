@@ -116,14 +116,15 @@ export default function Careers() {
             </div>
           </div>
           <div className="order-first xl:order-none float-right flex justify-center items-center xl:justify-end xl:items-end   mt-24 text-left lg:text-7xl text-5xl w-full lg:mb-0">
-            <Image src={focus} />
+            <Image alt="Workplace" src={focus} />
           </div>
         </div>
       </div>
 
       <div className="-mt-1   text-white flex  min-h-screen flex-col items-center p-6 bg-gradient-to-t to-[#1A1A1A]  from-[#2c3124] ">
         <div className=" px-8 lg:px-16 xl:px-32 font-semibold text-center xl:mt-24 mt-8 lg:text-6xl text-5xl w-full lg:mb-0">
-          <Image src={lumen} width={175} className="inline" /> Culture
+          <Image alt="Lumen Logo" src={lumen} width={175} className="inline" />{" "}
+          Culture
           <div className="text-xl mx-auto text-gray-300 lg:text-2xl font-medium max-w-3xl mt-4 mb-8">
             Our culture is the singular most significant thing at our company.
             We make cutting-edge designs becuase we have a cutting-edge
@@ -134,6 +135,7 @@ export default function Careers() {
         <div className="grid  gap-4 lg:grid-cols-2 xl:grid-cols-3 w-full mt-12">
           <div className="flex flex-col  items-center justify-center">
             <Image
+              alt="Lumen Logo"
               src={passion}
               className="aspect-square object-cover object-center rounded-lg max-w-sm"
             />
@@ -149,6 +151,7 @@ export default function Careers() {
           </div>
           <div className="flex flex-col  items-center justify-center">
             <Image
+              alt="Collaboration"
               src={collaboration}
               className="aspect-square object-cover object-center rounded-lg max-w-sm"
             />
@@ -166,6 +169,7 @@ export default function Careers() {
 
           <div className="flex flex-col  items-center justify-center">
             <Image
+              alt="Art"
               src={art}
               className="aspect-square object-cover object-center rounded-lg max-w-sm"
             />
@@ -182,7 +186,8 @@ export default function Careers() {
         </div>
 
         <div className=" px-8 lg:px-16 xl:px-32 font-semibold text-center xl:mt-24 mt-8 lg:text-6xl text-5xl w-full lg:mb-0">
-          <Image src={lumen} width={175} className="inline" /> Benefits
+          <Image src={lumen} width={175} className="inline" alt="Lumen Logo" />{" "}
+          Benefits
           <div className="text-xl mx-auto text-gray-300 lg:text-2xl font-medium max-w-3xl mt-4 mb-8">
             Work happily & freely with us.
           </div>
@@ -349,12 +354,12 @@ export default function Careers() {
                 </div>
                 <div className="h-0.5 bg-white my-3" />
                 <div className="text-md font-medium">
-                  Join LUMEN as our Customer Marketing Manager. You'll spearhead
-                  customer engagement initiatives, crafting innovative
+                  Join LUMEN as our Customer Marketing Manager. You&apos;ll
+                  spearhead customer engagement initiatives, crafting innovative
                   strategies to foster brand loyalty. Collaborate closely with
                   cross-functional teams to create unforgettable experiences for
-                  our brands. If you're passionate about building meaningful
-                  connections and driving business growth through
+                  our brands. If you&apos;re passionate about building
+                  meaningful connections and driving business growth through
                   customer-centric marketing, this role is for you!
                 </div>
               </div>
@@ -396,7 +401,7 @@ export default function Careers() {
                   We are seeking an experienced and proactive Executive
                   Assistant to support our Chief Financial Officer. As the
                   Executive Assistant to the CFO, you will play a pivotal role
-                  in ensuring the smooth operation of the CFO's office and
+                  in ensuring the smooth operation of the CFO&apos;s office and
                   providing high-level administrative support. The ideal
                   candidate is highly organized, detail-oriented, and able to
                   handle confidential information with discretion. This position

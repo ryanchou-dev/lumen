@@ -229,16 +229,19 @@ export default function Home() {
 
           <div className="flex justify-evenly -z-10">
             <Image
+              alt="Project Design for Positive Energy"
               src={hero1}
               loading="lazy"
               className="relative rotate-[7deg] left-2 rounded-3xl hover:scale-105 duration-200 transition ease-in-out"
             />
             <Image
+              alt="Project Design for Glossier"
               src={hero2}
               loading="lazy"
               className="relative left-2 rounded-3xl object-cover hover:scale-105 duration-200 transition ease-in-out"
             />
             <Image
+              alt="Project Design for Cream"
               src={hero3}
               loading="lazy"
               className="relative -rotate-[7deg] left-2 rounded-3xl hover:scale-105 duration-200 transition ease-in-out"
@@ -262,7 +265,12 @@ export default function Home() {
 
           <div className="mt-64 max-w-3xl mx-auto  text-3xl xl:text-4xl text-left  font-['Jost']">
             <div className="mb-12">
-              <Image src={lumen} width={175} className="inline" />
+              <Image
+                alt="Lumen Logo"
+                src={lumen}
+                width={175}
+                className="inline"
+              />
               <div className="inline leading-relaxed  font-bold tracking-wide text-white">
                 {" "}
                 is a multi-disciplinary collective of{" "}
@@ -358,8 +366,16 @@ export default function Home() {
             </Link>
           </div>
           <div className="flex justify-evenly mt-24">
-            <Image src={career1} className="rounded-lg" />
-            <Image src={career2} className="rounded-lg " />
+            <Image
+              alt="Workplace Picture"
+              src={career1}
+              className="rounded-lg"
+            />
+            <Image
+              alt="Workplace Collaboration"
+              src={career2}
+              className="rounded-lg "
+            />
           </div>
         </div>
       </MouseParallaxContainer>

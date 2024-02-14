@@ -193,13 +193,13 @@ export default function ExecutiveAssistant() {
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
                 As an Executive Assistant at LUMEN, you will play a pivotal role
                 in supporting our executive team and ensuring the efficient
-                operation of our organization. You'll be responsible for
+                operation of our organization. You&apos;ll be responsible for
                 managing calendars, coordinating meetings, arranging travel, and
                 handling various administrative tasks. Your attention to detail,
                 organizational skills, and ability to prioritize tasks will be
                 crucial in maintaining smooth workflow and supporting the
-                productivity of our executives. Additionally, you'll serve as a
-                liaison between the executive team and internal/external
+                productivity of our executives. Additionally, you&apos;ll serve
+                as a liaison between the executive team and internal/external
                 stakeholders, requiring strong communication and interpersonal
                 skills.
               </div>
@@ -212,7 +212,7 @@ export default function ExecutiveAssistant() {
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
                 <ul className="list-disc space-y-2">
                   <li>
-                    Manage the CFO's calendar, schedule appointments, and
+                    Manage the CFO&apos;s calendar, schedule appointments, and
                     coordinate meetings, conferences, and travel arrangements.
                   </li>
                   <li>
@@ -255,8 +255,8 @@ export default function ExecutiveAssistant() {
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
                 <ul className="list-disc space-y-2">
                   <li>
-                    Bachelor's degree in Business Administration, Finance, or
-                    related field preferred.
+                    Bachelor&apos;s degree in Business Administration, Finance,
+                    or related field preferred.
                   </li>
                   <li>
                     Proven experience as an executive assistant or similar role,
@@ -417,8 +417,8 @@ export default function ExecutiveAssistant() {
 
               <div className="bg-gray-500 h-0.5 w-full my-4" />
               <div className="text-gray-400  mb-4 text-center  text-xl font-medium ">
-                Optionally, let us know if there are any social links you'd like
-                to share:
+                Optionally, let us know if there are any social links you&apos;d
+                like to share:
               </div>
               <div className="grid lg:grid-cols-2  gap-8">
                 <div className="flex flex-col basis-1/2 flex-1">

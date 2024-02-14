@@ -192,11 +192,11 @@ export default function CustomerMarketing() {
                 Description
               </div>
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
-                Join LUMEN as our Customer Marketing Manager. You'll spearhead
-                customer engagement initiatives, crafting innovative strategies
-                to foster brand loyalty. Collaborate closely with
+                Join LUMEN as our Customer Marketing Manager. You&apos;ll
+                spearhead customer engagement initiatives, crafting innovative
+                strategies to foster brand loyalty. Collaborate closely with
                 cross-functional teams to create unforgettable experiences for
-                our brands. If you're passionate about building meaningful
+                our brands. If you&apos;re passionate about building meaningful
                 connections and driving business growth through customer-centric
                 marketing, this role is for you!
               </div>
@@ -210,7 +210,7 @@ export default function CustomerMarketing() {
                 <ul className="list-disc space-y-2">
                   <li>
                     Develop and execute comprehensive marketing strategies to
-                    promote LUMEN's services and enhance brand awareness.
+                    promote LUMEN&apos;s services and enhance brand awareness.
                   </li>
                   <li>
                     Manage and oversee all marketing campaigns, including
@@ -224,12 +224,12 @@ export default function CustomerMarketing() {
                   <li>
                     Collaborate with cross-functional teams to develop creative
                     assets, such as graphics, videos, and copywriting, that
-                    effectively communicate LUMEN's brand message.
+                    effectively communicate LUMEN&apos;s brand message.
                   </li>
                   <li>
                     Plan and coordinate promotional events, trade shows, and
-                    industry conferences to showcase LUMEN's capabilities and
-                    generate leads.
+                    industry conferences to showcase LUMEN&apos;s capabilities
+                    and generate leads.
                   </li>
                   <li>
                     Monitor and analyze marketing performance metrics, such as
@@ -242,7 +242,7 @@ export default function CustomerMarketing() {
                   </li>
                   <li>
                     Cultivate and maintain relationships with media outlets,
-                    influencers, and industry partners to maximize LUMEN's
+                    influencers, and industry partners to maximize LUMEN&apos;s
                     visibility and reach.
                   </li>
                 </ul>
@@ -256,9 +256,9 @@ export default function CustomerMarketing() {
               <div className="text-lg text-gray-300 max-w-3xl lg:text-xl font-medium  mb-8">
                 <ul className="list-disc space-y-2">
                   <li>
-                    Bachelor's degree in Marketing, Business Administration, or
-                    a related field. A master's degree or relevant
-                    certifications (e.g., AMA, HubSpot) is a plus.
+                    Bachelor&apos;s degree in Marketing, Business
+                    Administration, or a related field. A master&apos;s degree
+                    or relevant certifications (e.g., AMA, HubSpot) is a plus.
                   </li>
                   <li>
                     Proven experience (typically 5+ years) in marketing roles,
@@ -423,8 +423,8 @@ export default function CustomerMarketing() {
 
               <div className="bg-gray-500 h-0.5 w-full my-4" />
               <div className="text-gray-400  mb-4 text-center  text-xl font-medium ">
-                Optionally, let us know if there are any social links you'd like
-                to share:
+                Optionally, let us know if there are any social links you&apos;d
+                like to share:
               </div>
               <div className="grid lg:grid-cols-2  gap-8">
                 <div className="flex flex-col basis-1/2 flex-1">
