@@ -180,7 +180,9 @@ export default function Account() {
 
             <div className="w-full flex gap-4 flex-wrap mt-12">
               {applications.map((application) => (
-                <ApplicationCard application={application} />
+                <div key={application.id}>
+                  <ApplicationCard application={application} />
+                </div>
               ))}
             </div>
           </>

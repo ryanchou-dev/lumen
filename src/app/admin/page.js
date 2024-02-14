@@ -240,7 +240,9 @@ export default function Admin() {
               {applications.map(
                 (application) =>
                   application.status == filter && (
-                    <ApplicationCard application={application} />
+                    <div key={application.id}>
+                      <ApplicationCard application={application} />
+                    </div>
                   )
               )}
             </div>
