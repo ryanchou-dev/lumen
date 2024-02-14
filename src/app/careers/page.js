@@ -132,48 +132,57 @@ export default function Careers() {
           </div>
         </div>
 
-        <div className="grid  gap-4 lg:grid-cols-2 xl:grid-cols-3 w-full mt-12">
-          <div className="flex flex-col  items-center justify-center">
-            <Image
-              alt="Lumen Logo"
-              src={passion}
-              className="aspect-square object-cover object-center rounded-lg max-w-sm"
-            />
-            <div className="items-left justify-left">
+        <div className="grid  lg:gap-4 lg:grid-cols-2 xl:grid-cols-3 w-full mt-12">
+          <div className="flex flex-col  items-center justify-center ">
+            <div className="relative">
+              <Image
+                alt="Passion"
+                src={passion}
+                layout="responsive"
+                className="aspect-square object-cover object-center rounded-lg max-w-md"
+              />
+            </div>
+            <div className="relative text-left px-4">
               <div className="text-3xl max-w-sm  lg:text-4xl font-semibold  mt-6 mb-4">
                 Passion
               </div>
-              <div className="text-lg text-gray-300 max-w-sm lg:text-xl font-medium  mb-8">
+              <div className="text-wrap text-lg text-gray-300 max-w-sm lg:text-xl font-medium  mb-8">
                 Our team is passionate about our craft. We put our heart and
                 soul into every project, shipping quality over quantity.
               </div>
             </div>
           </div>
-          <div className="flex flex-col  items-center justify-center">
-            <Image
-              alt="Collaboration"
-              src={collaboration}
-              className="aspect-square object-cover object-center rounded-lg max-w-sm"
-            />
-            <div className="items-left justify-left">
+          <div className="flex flex-col items-center justify-center">
+            <div className="relative">
+              <Image
+                alt="Collaboration"
+                src={collaboration}
+                layout="responsive"
+                className="aspect-square object-cover object-center rounded-lg max-w-md"
+              />
+            </div>
+            <div className="relative text-left px-4">
               <div className="text-3xl max-w-sm  lg:text-4xl font-semibold  mt-6 mb-4">
                 Collaboration
               </div>
               <div className="text-lg text-gray-300  max-w-sm lg:text-xl font-medium  mb-8">
                 We send and receive feedback all the time. We work with each
                 other to grow together and after each day, we all grow little by
-                litte.
+                little.
               </div>
             </div>
           </div>
 
           <div className="flex flex-col  items-center justify-center">
-            <Image
-              alt="Art"
-              src={art}
-              className="aspect-square object-cover object-center rounded-lg max-w-sm"
-            />
-            <div className="items-left justify-left">
+            <div className="relative">
+              <Image
+                alt="Art"
+                src={art}
+                layout="responsive"
+                className="aspect-square object-cover object-center rounded-lg max-w-md"
+              />
+            </div>
+            <div className="relative text-left px-4">
               <div className="text-3xl max-w-sm  lg:text-4xl font-semibold  mt-6 mb-4">
                 Art
               </div>
@@ -257,16 +266,14 @@ export default function Careers() {
             title={"Competitive salary & equity."}
             text="We pay competitive salaries and retirement plans with company contribution."
           />
-          <div className="-ml-8">
-            <BenefitsCard
-              icon={`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="w-8 -mt-3 mr-2 h-8 inline">
+          <BenefitsCard
+            icon={`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="w-8 -mt-3 mr-2 h-8 inline">
 			<path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
 		  </svg>
 		  `}
-              title={"Reimbursements"}
-              text="We reimburse for cell phones and learning/development tools."
-            />
-          </div>
+            title={"Reimbursements"}
+            text="We reimburse for cell phones and learning/development tools. We also provide a monthly wellness stipend!"
+          />
         </div>
 
         <div
