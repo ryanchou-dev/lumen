@@ -307,7 +307,13 @@ export default function ExecutiveAssistant() {
             <div className=" px-8 lg:px-16 xl:px-32 font-semibold text-center text-white xl:mt-24 mt-8 lg:text-6xl text-5xl w-full lg:mb-0">
               Apply Now
             </div>
-            <form className="px-4 md:px-24 xl:px-56 w-full mt-12 ">
+            <form
+              className="px-4 md:px-24 xl:px-56 w-full mt-12 "
+              onSubmit={(e) => {
+                e.preventDefault();
+                submitApplication();
+              }}
+            >
               <div className="grid lg:grid-cols-2  gap-8">
                 <div className="flex flex-col basis-1/2 flex-1">
                   <label htmlFor="firstName" className="text-white">
@@ -489,8 +495,7 @@ export default function ExecutiveAssistant() {
               </div>
               <div className="flex flex-col justify-center items-center mt-8">
                 <button
-                  type="button"
-                  onClick={() => submitApplication()}
+                  type="submit"
                   className="font-['Rubik'] -ml-2 relative z-10  w-fit text-base lg:text-lg font-bold rounded-3xl hover:border-gray-600/90 transition hover:text-gray-100 duration-200 text-gray-300 px-8 lg:px-12 bg-black/50 border-2 border-gray-600/50 py-4 lg:py-6"
                 >
                   Submit Application
