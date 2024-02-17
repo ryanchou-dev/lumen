@@ -127,7 +127,7 @@ export default function Careers() {
           Culture
           <div className="text-xl mx-auto text-gray-300 lg:text-2xl font-medium max-w-3xl mt-4 mb-8">
             Our culture is the singular most significant thing at our company.
-            We make cutting-edge designs becuase we have a cutting-edge
+            We make cutting-edge designs because we have a cutting-edge
             community.
           </div>
         </div>
