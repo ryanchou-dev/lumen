@@ -378,7 +378,7 @@ export default function CareerPage({ params }) {
 										Linkedin
 									</label>
 									<div className="flex flex-row w-full">
-										<div className=" w-1/3 inline rounded-md  border-0 py-3 text-lg bg-gray-700 text-gray-400 pl-4 shadow-sm \  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#ABFF3A]  sm:leading-6">
+										<div className="  w-2/5 inline rounded-md  border-0 py-3 text-lg bg-gray-700 text-gray-400 pl-4 shadow-sm  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#ABFF3A]  sm:leading-6">
 											linkedin.com/in/
 										</div>
 
@@ -388,7 +388,7 @@ export default function CareerPage({ params }) {
 											id="linkedin"
 											value={linkedin}
 											onChange={(e) => setLinkedin(e.target.value)}
-											className="inline w-2/3  rounded-md  border-0 py-3 text-xl bg-gray-700 text-gray-200 px-4 shadow-sm ring-2 ring-inset  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#ABFF3A]  sm:leading-6"
+											className="inline w-3/5  rounded-md  border-0 py-3 text-xl bg-gray-700 text-gray-200 px-4 shadow-sm ring-2 ring-inset  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#ABFF3A]  sm:leading-6"
 										/>
 									</div>
 								</div>
