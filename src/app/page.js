@@ -227,7 +227,7 @@ export default function Home() {
 						</div>
 					</MouseParallaxChild>
 
-					<div className="flex mx-auto md:space-x-12  xl:space-x-32 xl:mx-24  justify-evenly -z-10">
+					<div className="flex justify-center items-left md:space-x-12  xl:space-x-32 xl:mx-24   -z-10">
 
 						<Image
 							src={hero1}
