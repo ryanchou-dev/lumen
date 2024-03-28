@@ -194,7 +194,7 @@ export default function Careers() {
 					</div>
 				</div>
 
-				<div className=" px-8 lg:px-16 xl:px-32 font-semibold text-center xl:mt-24 mt-8 lg:text-6xl text-5xl w-full lg:mb-0">
+				<div className=" px-8 lg:px-16 xl:px-48 font-semibold text-center xl:mt-24 mt-8 lg:text-6xl text-5xl w-full lg:mb-0">
 					<Image src={lumen} width={175} className="inline" alt="Lumen Logo" />{" "}
 					Benefits
 					<div className="text-xl mx-auto text-gray-300 lg:text-2xl font-medium max-w-3xl mt-4 mb-8">
@@ -202,7 +202,7 @@ export default function Careers() {
 					</div>
 				</div>
 
-				<div className="grid gap-12 lg:grid-cols-2 xl:grid-cols-3 w-full mt-12">
+				<div className="lg:px-16 px-8 xl:px-32 grid gap-12 lg:grid-cols-2 xl:grid-cols-3 w-full mt-12">
 					<BenefitsCard
 						icon={`<svg
                 xmlns="http://www.w3.org/2000/svg"
