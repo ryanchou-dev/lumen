@@ -232,18 +232,18 @@ export default function Home() {
 						<Image
 							src={hero1}
 							layout="responsive"
-							loading="lazy"
+							alt={"Positive Energy"}
 							className="relative max-w-full rotate-[7deg] left-2 rounded-3xl hover:scale-105 duration-200 transition ease-in-out"
 						/>
 						<Image
 							src={hero2}
-							loading="lazy"
+							alt={"Glossier"}
 							layout="responsive"
 							className="relative max-w-full left-2 rounded-3xl object-cover hover:scale-105 duration-200 transition ease-in-out"
 						/>
 						<Image
 							src={hero3}
-							loading="lazy"
+							alt={"Cream"}
 							layout="responsive"
 							className="relative  max-w-full -rotate-[7deg] left-2 rounded-3xl hover:scale-105 duration-200 transition ease-in-out"
 						/>
@@ -266,7 +266,7 @@ export default function Home() {
 
 					<div className="mt-64 max-w-3xl mx-auto  text-3xl xl:text-4xl text-left  font-['Jost']">
 						<div className="mb-12">
-							<Image src={lumen} width={175} className="inline" />
+							<Image src={lumen} width={175} alt="Lumen" className="inline" />
 							<div className="inline leading-relaxed  font-bold tracking-wide text-white">
 								{" "}
 								is a multi-disciplinary collective of{" "}
@@ -362,8 +362,8 @@ export default function Home() {
 						</Link>
 					</div>
 					<div className="flex justify-evenly mt-24">
-						<Image src={career1} className="rounded-lg" />
-						<Image src={career2} className="xl:block hidden rounded-lg " />
+						<Image src={career1} alt="LUMEN Work Environment" className="rounded-lg" />
+						<Image src={career2} alt="LUMEN Work Environment" className="xl:block hidden rounded-lg " />
 					</div>
 				</div>
 			</MouseParallaxContainer>
